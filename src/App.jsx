@@ -11,11 +11,9 @@ export const tabs = [
 ];
 
 export const App = () => {
-  const [activeTabId, setActiveTabId] = useState(
-    tabs.find(tab => tab.id) ? tabs[0].id : '',
-  );
+  const [activeTabId, setActiveTabId] = useState(tabs[0]?.id || '');
 
-  const activeTab = tabs.find(tab => tab.id === activeTabId || tabs[0]);
+  const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
 
   return (
     <div className="section">
@@ -29,7 +27,7 @@ export const App = () => {
         />
 
         <div className="block" data-cy="TabContent">
-          Some text 1
+          {activeTabId.content}
         </div>
       </div>
     </div>
