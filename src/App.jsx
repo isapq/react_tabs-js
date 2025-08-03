@@ -27,7 +27,7 @@ export const App = () => {
         />
 
         <div className="block" data-cy="TabContent">
-          {activeTabId.content}
+          {activeTab.content}
         </div>
       </div>
     </div>
